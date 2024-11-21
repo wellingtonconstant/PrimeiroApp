@@ -26,14 +26,15 @@ class MainActivity : AppCompatActivity() {
         val btnCalcular = findViewById<Button>(R.id.btn_calcular)
 
         btnCalcular.setOnClickListener {
-            val peso = edtPeso.text
-            println("Beto ação do botão" + peso)
+            val peso: Float = edtPeso.text.toString().toFloat()
+            val altura: Float = edtAltura.text.toString().toFloat()
+
+            val alturaQ2 = altura * altura
+            val resultado = peso / alturaQ2
+
+            println("Beto ação do botão " + resultado)
         }
 
-        btnCalcular.setOnClickListener {
-            val altura = edtAltura.text
-            println("Beto ação do botão" + altura)
-        }
 
 
     }
