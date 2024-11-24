@@ -1,6 +1,7 @@
 package com.example.primeiroapp
 
 import android.graphics.Color
+import android.graphics.drawable.ColorStateListDrawable
 import android.os.Bundle
 import android.provider.CalendarContract.Colors
 import android.widget.TextView
@@ -22,7 +23,6 @@ class ResultActivity : AppCompatActivity() {
 
         val tvResult = findViewById<TextView>(R.id.tv_result)
         val tvClassificacao = findViewById<TextView>(R.id.tv_classificacao)
-        val tvColor = findViewById<Color>(R.id.tv_classificacao)
 
 
         tvResult.text = result.toString()
@@ -39,14 +39,8 @@ class ResultActivity : AppCompatActivity() {
             "OBESIDADE GRAVE"
         }
 
-          tvClassificacao.text = classificacao
 
-        //TAREFA
-
-        // MAGREZA = VERMELHO
-        // NORMAL = VERDE
-        // SOBREPESO = AMARELO
-        // DEMAIS VERMELHOS
+        tvClassificacao.text = classificacao
 
 
     }
