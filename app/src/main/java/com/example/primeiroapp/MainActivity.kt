@@ -1,5 +1,6 @@
 package com.example.primeiroapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -15,12 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Recuperar os componentes EditText
-        // Criar uma variavel e associar (=) o componente de UI<EditText>
-        // Recuperar o botão da tela
-        // Recuperar o texto digitado no edt peso
-        // Recuperar o texto digitado no edt altura
-
         val edtPeso = findViewById<TextInputEditText>(R.id.edt_peso)
         val edtAltura = findViewById<TextInputEditText>(R.id.edt_altura)
 
@@ -31,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             val alturaStr: String = edtAltura.text.toString()
 
             if(pesoStr == "" || alturaStr == "") {
-                // Mostrar mensagem para o usuario
 
                 Snackbar
                     .make(
@@ -48,11 +42,14 @@ class MainActivity : AppCompatActivity() {
                 val alturaQ2 = altura * altura
                 val resultado = peso / alturaQ2
 
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra(KEY_RESULT_IMC, resultado)
+                startActivity(intent)
+
                 println("Beto ação do botão " + resultado)
             }
 
         }
-
 
 
     }
