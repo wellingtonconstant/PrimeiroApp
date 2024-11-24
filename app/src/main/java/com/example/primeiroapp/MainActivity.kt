@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
             val alturaStr: String = edtAltura.text.toString()
 
             if(pesoStr == "" || alturaStr == "") {
-                // Mostrar mensagem para o usuario
 
                 Snackbar
                     .make(
@@ -46,10 +45,6 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra(KEY_RESULT_IMC, resultado)
                 startActivity(intent)
-
-
-                // Gradiente + ícone + título + descricao
-
 
                 println("Beto ação do botão " + resultado)
             }
